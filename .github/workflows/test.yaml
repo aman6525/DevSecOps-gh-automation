@@ -4,6 +4,7 @@ on:
     branches:
       "*"
 steps:
+  jobs:
     build:
       - name: checkout repro
         uses: actions/checkout@v3
