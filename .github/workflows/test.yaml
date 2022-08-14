@@ -1,4 +1,8 @@
 name: Testing for checkout
+on:
+  push:
+    branches:
+      "*"
 steps:
     build:
       - name: checkout repro
