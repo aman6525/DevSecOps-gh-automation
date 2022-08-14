@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Testing for checkout
-    jobs:
+    steps:
       - name: checkout repro
         uses: actions/checkout@v3
 
