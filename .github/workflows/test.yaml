@@ -1,4 +1,4 @@
-name: Testing for checkout
+name: zap runner
 on: [push]
 jobs:
   build:
