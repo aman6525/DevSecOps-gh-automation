@@ -6,6 +6,24 @@ jobs:
     name: Testing for checkout
     steps:
       - uses: actions/checkout@v3
-      - name: Custom actions
-        run: echo aman
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt-hotspot'
+          java-version: '11'
+      - name: ZAP download
+        run: 
+          wget https://github.com/zaproxy/zaproxy/releases/download/v2.11.0/ZAP_2.11.0_Linux.tar.gz
+          tar -xvf ZAP_2.11.0_Linux.tar.gz
+          cd ZAP_2.11.0
+          bash zap.sh -daemon -config api.key=TestKeyXSS
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - name: Started Vulnerability Scanner zerro
+        run:
+          git clone https://github.com/theamanrawat/zerro.git
+          cd zerro
+          pip install -r requirements.txt
+          python zerro.py
 
