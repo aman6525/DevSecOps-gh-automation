@@ -1,0 +1,6 @@
+name: Testing for checkout
+steps:
+    build:
+      - name: checkout repro
+        uses: actions/checkout@v3
+
