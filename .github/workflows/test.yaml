@@ -3,9 +3,10 @@ on:
   push:
     branches:
       "*"
-steps:
-  jobs:
-    build:
+jobs:
+  build:
+    name: Testing for checkout
+    jobs:
       - name: checkout repro
         uses: actions/checkout@v3
 
