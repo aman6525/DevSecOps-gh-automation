@@ -1,13 +1,10 @@
 name: Testing for checkout
-on:
-  push:
-    branches:
-      "*"
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     name: Testing for checkout
     steps:
       - name: Custom actions
-        runs: echo aman
+        run: echo aman
 
